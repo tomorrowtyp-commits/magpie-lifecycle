@@ -1,0 +1,20 @@
+# dsh bundle patch: mounts the local dsh-magpie-lifecycle plugin, which keeps the
+# Magpie gateway (127.0.0.1:3425) as a child of the DSH host process.
+#
+# The row must be an `insert`: a bare entry that already carries an `id` only
+# overrides an existing row, so it would be skipped when no row has this id.
+#
+# exe points at this machine's Magpie build. The plugin only ever starts the
+# gateway when nothing is listening on host:port yet, and it never touches a
+# process that is not magpie/magpie-bun.
+- insert:
+    - id: magpie-gateway-lifecycle
+      name: '@local/magpie-lifecycle'
+      config:
+        exe: 'D:\software\Magpie\magpie.exe'
+        args: [web, --no-open, --gateway]
+        host: 127.0.0.1
+        port: 3425
+        startupTimeoutMs: 60000
+        adoptExisting: true
+        stopOnExit: true
