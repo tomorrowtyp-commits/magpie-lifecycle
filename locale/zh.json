@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Magpie 网关生命周期",
+    "description": "把 Magpie 网关作为 DSH 宿主的子进程：DSH 启动时拉起，DSH 退出时一并结束。",
+    "detail": "docs/DETAIL.md"
+  }
+}
