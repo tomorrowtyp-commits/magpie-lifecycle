@@ -1,0 +1,25 @@
+{
+  "name": "@local/magpie-lifecycle",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Tie the Magpie gateway process to the DeepSeek Harness host lifetime: start it when DSH boots, stop it when DSH exits.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
