@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Magpie gateway lifetime",
+    "description": "Runs the Magpie gateway as a child of the DSH host: it starts when DSH boots and stops when DSH exits.",
+    "detail": "docs/DETAIL.md"
+  }
+}
